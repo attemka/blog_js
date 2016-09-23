@@ -1,0 +1,49 @@
+.baseblock {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #7d7f77;
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
+.name{
+    font-family: Calibri;
+    float:left;
+    font-size: 30px;
+    color: #efffef;
+    line-height: 40px;
+    font-style: italic;
+    margin: 0;
+}
+.baseblock nav{
+    line-height: 40px;
+    float: right;
+    margin-right: 10%;
+
+}
+.baseblock nav a{
+    font-family: Calibri;
+    display: inline-block;
+    padding: 0 8px;
+    color: #faf8ff;
+    text-decoration: none;
+    font-size: 20px;
+    opacity: 0.9;
+
+
+}
+.baseblock nav a:hover{
+    background-color: #faf8ff;
+    border-radius: 7px;
+    opacity: 1;
+    color: #333733;
+}
+.baseblock nav a.selected {
+    color:#004729;
+    pointer-events: none;
+    opacity: 1;
+}
