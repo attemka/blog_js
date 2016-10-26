@@ -2,19 +2,20 @@
         <html>
 <body>
 <link rel='stylesheet' href='/stylesheets/base.css' >
-<script type="text/javascript" src="/js/headerScript.js"></script>
 <div class="baseblock">
-    <h1 class="name">My blog</h1>
+    <h1 class="name" id="4epa">My blog</h1>
     <nav>
         <a href="#">Главная</a>
         <a href="#">Посты</a>
         <% if (user) { %>
-        <a id="enterButton" href="">Выйти</a>
-        <form method="POST" id="postform" action="/logout"></form>
+        <a id="enterButton" href="#">Выйти</a>
+        <form method="post" id="postform" action="/logout"></form>
+        <input type="button" id="testid" value="test">
         <% } else { %>
         <a id="enterButton" href="/login">Войти</a>
         <% } %>
     </nav>
     </div>
+<script type="text/javascript" src="/js/headerScript.js"></script>
 </body>
 </html>

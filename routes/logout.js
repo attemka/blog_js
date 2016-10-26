@@ -1,4 +1,4 @@
-exports.post = function (err, res) {
+exports.post = function (req, res) {
     req.session.destroy();
-    res.redirect('/');
+    res.redirect('/signup');
 };
