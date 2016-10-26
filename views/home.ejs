@@ -1,14 +1,17 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>welcome to blog</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
+    <h1>4e kak</h1>
     <% include header.ejs %>
-    <p>Welcome to <%= title %></p>
+    <% if (user) { %>
+    <p>zdarova, <%=user.get('username')%></p>
+    <% } else { %>
+  <p>але дебил</p>
+    <% } %>
 
   </body>
 </html>

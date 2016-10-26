@@ -3,7 +3,7 @@ function myScript() {
     console.log("ale");
     if (user) {
         button.onclick = function () {
-            document.getElementById("postform");
+            document.getElementById("postform").submit();
             console.log('hi');
             return false;
         };

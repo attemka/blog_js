@@ -1,3 +1,22 @@
 {
-  "port": 8000
+  "port": 8000,
+  "mongoose":{
+    "uri": "mongodb://localhost/mydb",
+    "options":{
+      "server":{
+        "socketOptions":{
+          "keepAlive": 1
+        }
+      }
+    }
+  },
+  "session":{
+    "secret": "gazondebil",
+    "key": "sid",
+    "cookie":{
+      "path":"/",
+      "httpOnly":true,
+      "maxAge":null
+    }
+  }
 }

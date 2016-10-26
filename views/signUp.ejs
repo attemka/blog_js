@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1>Логин</h1>
+<% include header.ejs %>
+<form id="signInForm" method="post">
+    <label class="errorLabel"></label>
+    <input class="formTextInput" name="email" placeholder="E-mail"
+           type="text">
+    <br>
+    <input class="formTextInput" name="username" placeholder="Your username" type="text" >
+    <br>
+    <input class="formTextInput" name="password" placeholder="Password"
+           type="password">
+    <input type="submit" class="submitButton" value="Enter">
+</form>
+
+</body>
+</html>
