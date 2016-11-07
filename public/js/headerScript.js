@@ -5,8 +5,6 @@ if (button == null){
 }
     button.onclick = function () {
         document.getElementById("postform").submit();
-       // if (formee == null) console.log ("tebe pizda");
-        //form.submit("formee");
         console.log('hi');
         return false;
 };

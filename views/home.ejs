@@ -4,13 +4,20 @@
     <title>welcome to blog</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-
-    <h1>4e kak</h1>
+<body>
+<div class="background-image"></div>
     <% include header.ejs %>
     <% if (user) { %>
     <p>zdarova, <%=user.get('username')%></p>
     <% } else { %>
-  <p>але дебил</p>
+  <div class="welcomeText">
+      <h1 class="title1">Welcome to the test blog</h1><br>
+
+      <button class="welcomeBtn">Login</button>
+      or
+      <button class="welcomeBtn">Sign up</button><br>
+      <p>to begin</p> <br>
+  </div>
     <% } %>
 
   </body>
