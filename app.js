@@ -12,6 +12,8 @@ var session= require ('express-session')
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require ('./routes/login');
+var HttpError = require ('config/error').HttpError;
+app.use(require('middleware/sendHttpError'));
 var MongoStore = require ('connect-mongo')(session);
 var config = require ('config');
 var helpers = require('express-helpers')(app);
@@ -52,7 +54,24 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+app.use(function (err, req, res, next) {
+  if (typeof err == 'number'){
+    err = new HttpError(err);
+  }
+  
+  if (err instanceof HttpError){
+    res.sendHttpError(err);
+  } else {
+    if (app.get('env') === 'development') {
+      express._errorHandler()(err, req, res, next);
+    } else {
+      err = new HttpError(500);
+      res.sendHttpError(err);
+    }
+  }
+});
+
+/*if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -60,7 +79,7 @@ if (app.get('env') === 'development') {
       error: err
     });
   });
-}
+}*/
 
 // production error handler
 // no stacktraces leaked to user

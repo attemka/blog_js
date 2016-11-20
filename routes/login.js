@@ -1,5 +1,6 @@
 var User = require ('models/user').User;
 var AuthError = require ('models/user').AuthError;
+var HttpError = require ('config/error').HttpError;
 var async = require('async');
 var session = require('express-session');
 
@@ -15,13 +16,15 @@ exports.post = function (req, res, next) {
 
     User.authorize(username, password, function (err, user) {
         if (err) {
-            if (err instanceof AuthError) {
-                return next(err);// исправить на httperror если че
+            if (err instanceof HttpError) {
+                return next(new HttpError(404, "User not found :("));// исправить на httperror если че
             }
         }
-    req.session.user = user._id;
-    //res.send({});
-        res.redirect("/");
+    else {
+            req.session.user = user._id;
+            //res.send({});
+            res.redirect("/");
+        }
 
 });
 

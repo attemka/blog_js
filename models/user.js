@@ -2,6 +2,7 @@ var crypto = require ('crypto');
 var mongoose = require('libs/mongoose');
 var async = require ('async');
 const util = require('util');
+var HttpError = require('config/error').HttpError;
 Schema = mongoose.Schema;
 
 var schema = new Schema ({
@@ -56,10 +57,10 @@ schema.statics.authorize = function (username, password, callback) {
                 if (user.checkPassword(password)) {
                     callback(null, user);
                 } else {
-                    callback(new AuthError(403, "Wrong password"));
+                    callback(new HttpError(403, "Wrong password"));
                 }
             } else {
-                callback(new AuthError(403, "user not found"));
+                callback(new HttpError(403, "user not found"));
             }
         }
     ], callback);
