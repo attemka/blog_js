@@ -8,13 +8,16 @@
 <h1>Логин</h1>
 <% include header.ejs %>
 <form id="signInForm" method="post">
-    <label class="errorLabel"></label>
-    <input class="formTextInput" name="username" placeholder="username"
+    <br>
+    <input class="formTextInput" id="nickInput" name="username" placeholder="username"
            type="text">
-    <input class="formTextInput" name="password" placeholder="Password"
+    <label id="nickError"></label> <br>
+    <input class="formTextInput" id="passInput" name="password" placeholder="Password"
            type="password">
-    <input type="submit" class="submitButton" value="Enter">
-</form> 
+    <label id="passError"></label> <br>
+    <input type="submit" class="submitButton" id="submit" value="Enter">
+</form>
 no acc? <a href="/signup">sign up.</a>
+<script type="text/javascript" src="/js/LoginFront.js"></script>
 </body>
 </html>

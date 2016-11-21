@@ -74,7 +74,7 @@ schema.statics.signup = function (email, username, password, callback) {
         },
         function (user, callback) {
             if (user) {
-                callback(new AuthError(403, "User existing"));
+                callback(new HttpError(403, "User existing"));
                 } else {
                 var user = new User({username: username, password: password, email: email});
                 user.save(function (err) {

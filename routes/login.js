@@ -17,7 +17,7 @@ exports.post = function (req, res, next) {
     User.authorize(username, password, function (err, user) {
         if (err) {
             if (err instanceof HttpError) {
-                return next(new HttpError(404, "User not found :("));// исправить на httperror если че
+                return next(new HttpError(403, "User not found "));
             }
         }
     else {
