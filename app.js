@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 var mongoose = require ('mongoose');
 var session= require ('express-session')
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var users = require('./routes/user');
 var login = require ('./routes/login');
 var HttpError = require ('config/error').HttpError;
 app.use(require('middleware/sendHttpError'));
