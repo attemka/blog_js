@@ -5,19 +5,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-<h1>Логин</h1>
+<h1>Sign up</h1>
 <% include header.ejs %>
+<div class="loginRegBlock">
 <form id="signInForm" method="post">
-    <input id="emailInput" class="formTextInput" name="email" placeholder="E-mail" type="text">
+    <input id="emailInput" class="formTextInput" name="email" placeholder="Email" type="text">
     <label id="emailError"></label>
     <br>
     <input id="nickInput" class="formTextInput" name="username" placeholder="Your username" type="text" >
     <label id="nickError"></label>
     <br>
     <input id="passInput" class="formTextInput" name="password" placeholder="Password" type="password">
-    <label id="passError"></label>
-    <input type="submit" class="submitButton" id="submit" value="Enter">
+    <label id="passError"></label> <br>
+    <input type="submit" class="welcomeBtn" id="submit" value="Enter">
 </form>
+    </div>
 <script type="text/javascript" src="/js/signUpFront.js"></script>
 </body>
 </html>

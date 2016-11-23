@@ -7,17 +7,19 @@
 <body>
 <h1>Логин</h1>
 <% include header.ejs %>
+<div class="loginRegBlock">
 <form id="signInForm" method="post">
     <br>
     <input class="formTextInput" id="nickInput" name="username" placeholder="username"
            type="text">
-    <label id="nickError"></label> <br>
     <input class="formTextInput" id="passInput" name="password" placeholder="Password"
-           type="password">
-    <label id="passError"></label> <br>
-    <input type="submit" class="submitButton" id="submit" value="Enter">
+           type="password" required><br>
+    <label class="errorLabel" id="nickError"></label> <br>
+    <label class="errorLabel" id="passError"></label> <br>
+    <input type="submit" class="welcomeBtn" id="submit" value="Enter">
 </form>
 no acc? <a href="/signup">sign up.</a>
+    </div>
 <script type="text/javascript" src="/js/LoginFront.js"></script>
 </body>
 </html>
