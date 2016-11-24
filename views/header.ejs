@@ -5,13 +5,14 @@
 <div class="baseblock">
     <h1 class="name">My blog</h1>
     <nav>
-        <a href="/">Главная</a>
-        <a href="#">Посты</a>
+        <a href="/">Home</a>
+        <a href="#">Posts</a>
         <% if (user) { %>
-        <a id="enterButton" href="#">Выйти</a>
+        <a id="userPade" href="/user/<%=user._id%>">Profile</a>
+        <a id="enterButton" href="#">Logout</a>
         <form method="post" id="postform" action="/logout"></form>
         <% } else { %>
-        <a id="enterButton" href="/login">Войти</a>
+        <a id="enterButton" href="/login">Login</a>
         <% } %>
     </nav>
     </div>

@@ -7,7 +7,6 @@ exports.get = function (req, res) {
     res.render('signup');
 };
 
-
 exports.post = function (req, res, next) {
     var email = req.body.email;
     var username = req.body.username;

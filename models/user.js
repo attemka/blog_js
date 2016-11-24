@@ -66,6 +66,14 @@ schema.statics.authorize = function (username, password, callback) {
     ], callback);
 };
 
+schema.methods.getUsernameById = function (id) {
+    var User = this;
+    var userModel = User.findById(id);
+    var username = userModel.username;
+
+    return username;
+}
+
 schema.statics.signup = function (email, username, password, callback) {
     var User = this;
     async.waterfall([
@@ -86,7 +94,7 @@ schema.statics.signup = function (email, username, password, callback) {
     ], callback);
 };
     function AuthError(message) {
-        Error.call(this, AuthError)
+        Error.call(this, AuthError);
         Error.apply(this, arguments);
         Error.captureStackTrace(this, AuthError);
         this.message = message;
